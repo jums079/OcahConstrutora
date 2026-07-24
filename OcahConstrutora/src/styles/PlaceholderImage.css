@@ -1,0 +1,83 @@
+.placeholder-image {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 420px;
+  background:
+    radial-gradient(circle at 72% 20%, rgba(237, 201, 165, 0.4), transparent 24%),
+    linear-gradient(145deg, #a17047 0%, #70421f 50%, #251912 100%);
+}
+
+.placeholder-image::before {
+  position: absolute;
+  z-index: -1;
+  right: -3%;
+  bottom: -8%;
+  width: 74%;
+  height: 80%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background:
+    linear-gradient(90deg, transparent 33%, rgba(255, 255, 255, 0.16) 34% 35%, transparent 36% 66%, rgba(255, 255, 255, 0.14) 67% 68%, transparent 69%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0 12%, transparent 12% 23%, rgba(255, 255, 255, 0.08) 23% 35%, transparent 35% 46%, rgba(255, 255, 255, 0.08) 46% 58%, transparent 58%);
+  box-shadow: -24px -24px 0 rgba(255, 255, 255, 0.04);
+  content: "";
+  clip-path: polygon(17% 0, 100% 9%, 100% 100%, 0 100%, 0 23%);
+}
+
+.placeholder-image::after {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 8%;
+  width: 30%;
+  height: 46%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(34, 22, 14, 0.42);
+  content: "";
+  clip-path: polygon(50% 0, 100% 19%, 100% 100%, 0 100%, 0 19%);
+}
+
+.placeholder-image__grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.17;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.24) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.24) 1px, transparent 1px);
+  background-size: 54px 54px;
+}
+
+.placeholder-image__label {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.placeholder-image__label small {
+  opacity: 0.7;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+}
+
+.placeholder-image--hero {
+  min-height: 610px;
+  border-radius: 0 0 44% 0;
+}
+
+.placeholder-image--about {
+  min-height: 610px;
+  border-radius: 2px;
+}

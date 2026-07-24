@@ -1,0 +1,117 @@
+.about {
+  overflow: hidden;
+  background: var(--color-sand);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(56px, 8vw, 118px);
+}
+
+.about__media {
+  position: relative;
+}
+
+.about__media::before {
+  position: absolute;
+  z-index: 2;
+  top: -28px;
+  left: -28px;
+  width: 112px;
+  height: 112px;
+  border-top: 1px solid var(--color-brown);
+  border-left: 1px solid var(--color-brown);
+  content: "";
+}
+
+.about__locations {
+  position: absolute;
+  z-index: 3;
+  right: -42px;
+  bottom: -34px;
+  display: grid;
+  min-width: 250px;
+  padding: 24px 28px;
+  color: #fff;
+  background: var(--color-ink);
+  box-shadow: var(--shadow-soft);
+}
+
+.about__locations span {
+  margin-bottom: 14px;
+  color: #c99e76;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about__locations strong {
+  padding: 7px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.78rem;
+}
+
+.about__content > p {
+  max-width: 640px;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.about__segments {
+  margin-top: 38px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-line);
+}
+
+.about__segments-title {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about__segments > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about__segments > div span {
+  padding: 10px 14px;
+  border: 1px solid rgba(125, 75, 34, 0.25);
+  border-radius: 999px;
+  color: var(--color-brown-dark);
+  background: rgba(255, 255, 255, 0.32);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__media {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 560px) {
+  .placeholder-image--about {
+    min-height: 480px;
+  }
+
+  .about__locations {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: calc(100% - 24px);
+    margin: -54px 0 0 auto;
+  }
+}

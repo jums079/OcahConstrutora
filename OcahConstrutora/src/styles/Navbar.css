@@ -1,0 +1,117 @@
+.navbar {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #fff;
+}
+
+.navbar__inner {
+  display: flex;
+  min-height: 96px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.navbar__navigation {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.navbar__navigation > a:not(.navbar__cta) {
+  position: relative;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.navbar__navigation > a:not(.navbar__cta)::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 1px;
+  background: #fff;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 180ms ease;
+}
+
+.navbar__navigation > a:not(.navbar__cta):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar__cta {
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 750;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.navbar__cta:hover {
+  color: var(--color-ink);
+  background: #fff;
+}
+
+.navbar__menu-button {
+  display: none;
+  width: 46px;
+  height: 46px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.navbar__menu-button span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 5px 0;
+  background: #fff;
+}
+
+@media (max-width: 850px) {
+  .navbar__inner {
+    min-height: 80px;
+  }
+
+  .navbar__menu-button {
+    display: block;
+  }
+
+  .navbar__navigation {
+    position: absolute;
+    top: 80px;
+    right: 16px;
+    left: 16px;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    background: rgba(33, 23, 15, 0.98);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .navbar__navigation--open {
+    display: grid;
+  }
+
+  .navbar__navigation > a:not(.navbar__cta) {
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar__cta {
+    margin-top: 14px;
+    text-align: center;
+  }
+}
