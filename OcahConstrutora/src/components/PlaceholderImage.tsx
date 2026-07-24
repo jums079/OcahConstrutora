@@ -2,21 +2,16 @@ import '../styles/PlaceholderImage.css'
 
 type PlaceholderImageProps = {
   label: string
-  variant?: 'hero' | 'about'
 }
 
-export function PlaceholderImage({ label, variant = 'about' }: PlaceholderImageProps) {
+export function PlaceholderImage({ label }: PlaceholderImageProps) {
   return (
-    <div
-      className={`placeholder-image placeholder-image--${variant}`}
-      role="img"
-      aria-label={`${label}. Imagem ilustrativa temporária.`}
-    >
-      <span className="placeholder-image__grid" aria-hidden="true" />
-      <span className="placeholder-image__label">
-        <small>Imagem ilustrativa</small>
-        {label}
-      </span>
-    </div>
+    <figure className="placeholder-image">
+      <img
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1100&q=85"
+        alt={`${label}. Imagem ilustrativa temporária.`}
+      />
+      <figcaption>Imagem ilustrativa — substituição futura</figcaption>
+    </figure>
   )
 }

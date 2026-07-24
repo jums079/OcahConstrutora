@@ -4,7 +4,6 @@ import { Footer } from '../components/Footer'
 import { Hero } from '../components/Hero'
 import { Navbar } from '../components/Navbar'
 import { Services } from '../components/Services'
-import { WhatsAppButton } from '../components/WhatsAppButton'
 
 export function HomePage() {
   return (
@@ -17,7 +16,6 @@ export function HomePage() {
         <Contact />
       </main>
       <Footer />
-      <WhatsAppButton />
     </>
   )
 }

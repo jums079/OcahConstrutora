@@ -1,34 +1,53 @@
-import { companyContacts, WHATSAPP_LINK } from '../services/siteContent'
+import { Instagram, Mail, MessageCircle, Phone } from 'lucide-react'
+import { contactChannels, WHATSAPP_LINK } from '../services/siteContent'
 import '../styles/Contact.css'
+import { Reveal } from './Reveal'
+import { SectionHeading } from './SectionHeading'
+
+const contactIcons = [MessageCircle, Mail, Instagram, Phone]
 
 export function Contact() {
   return (
     <section className="contact section" id="contato">
-      <div className="container contact__panel">
-        <div className="contact__heading">
-          <p className="eyebrow eyebrow--light">Vamos conversar</p>
-          <h2>
-            Seu próximo projeto começa com um <em>bom planejamento.</em>
-          </h2>
-          <a className="button button--light" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
-            Solicitar orçamento
-            <span aria-hidden="true">↗</span>
-          </a>
+      <div className="container">
+        <Reveal effect="fade-down">
+          <SectionHeading eyebrow="Entre em contato" title="Fale com a OCAH Construtora" />
+        </Reveal>
+
+        <div className="contact__grid">
+          {contactChannels.map((channel, index) => {
+            const ContactIcon = contactIcons[index]
+            const effect = index % 2 === 0 ? 'fade-down' : 'fade-up'
+
+            return (
+              <Reveal
+                className="contact-card"
+                effect={effect}
+                delay={index as 0 | 1 | 2 | 3}
+                key={channel.label}
+              >
+                <ContactIcon aria-hidden="true" />
+                <h3>{channel.label}</h3>
+                <p>{channel.value}</p>
+                <a
+                  href={channel.href}
+                  target={channel.external ? '_blank' : undefined}
+                  rel={channel.external ? 'noreferrer' : undefined}
+                  aria-label={`Abrir contato por ${channel.label}`}
+                >
+                  Acessar
+                </a>
+              </Reveal>
+            )
+          })}
         </div>
-        <address className="contact__details">
-          <a href={`mailto:${companyContacts.email}`}>
-            <span>E-mail</span>
-            <strong>{companyContacts.email}</strong>
+
+        <Reveal className="contact__action" effect="fade-left">
+          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+            <MessageCircle aria-hidden="true" />
+            Fale por WhatsApp
           </a>
-          <a href={companyContacts.instagramUrl} target="_blank" rel="noreferrer">
-            <span>Instagram</span>
-            <strong>{companyContacts.instagram}</strong>
-          </a>
-          <a href={companyContacts.phoneUrl}>
-            <span>Telefone</span>
-            <strong>{companyContacts.phone}</strong>
-          </a>
-        </address>
+        </Reveal>
       </div>
     </section>
   )
