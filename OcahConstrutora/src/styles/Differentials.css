@@ -1,0 +1,56 @@
+.differentials {
+  background: var(--color-sand);
+}
+
+.differentials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.differential {
+  display: flex;
+  min-height: 118px;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  border: 1px solid rgba(125, 75, 34, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.differential:hover {
+  background: #ffffff;
+  box-shadow: 0 18px 34px rgba(68, 42, 24, 0.1);
+  transform: translateY(-5px);
+}
+
+.differential svg {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  color: var(--color-primary);
+  stroke-width: 1.5;
+}
+
+.differential span {
+  color: var(--color-primary-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .differentials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .differentials__grid {
+    grid-template-columns: 1fr;
+  }
+}

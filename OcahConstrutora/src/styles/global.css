@@ -8,11 +8,13 @@
   --color-primary-dark: #4d2d17;
   --color-primary-deep: #342014;
   --color-accent: #c79b70;
+  --color-accent-light: #ead3bd;
   --color-text: #3e342d;
   --color-muted: #8d8782;
   --color-paper: #ffffff;
   --color-sand: #f5f0eb;
-  --shadow-card: 0 18px 32px rgba(68, 42, 24, 0.14);
+  --color-ink: #201914;
+  --shadow-card: 0 20px 48px rgba(68, 42, 24, 0.12);
 }
 
 * {
@@ -69,7 +71,7 @@ a {
 }
 
 .container {
-  width: min(1120px, calc(100% - 48px));
+  width: min(1280px, calc(100% - 64px));
   margin-inline: auto;
 }
 
@@ -89,11 +91,11 @@ a {
 
 @media (max-width: 760px) {
   .container {
-    width: min(100% - 32px, 1120px);
+    width: min(100% - 32px, 1280px);
   }
 
   .section {
-    padding: 72px 0;
+    padding: 68px 0;
   }
 }
 

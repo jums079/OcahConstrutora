@@ -1,7 +1,4 @@
-import { MapPin } from 'lucide-react'
-import { businessSegments, regionalPresence } from '../services/siteContent'
 import '../styles/About.css'
-import { PlaceholderImage } from './PlaceholderImage'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
@@ -15,41 +12,25 @@ export function About() {
 
         <div className="about__grid">
           <Reveal className="about__media" effect="fade-left">
-            <PlaceholderImage label="Equipe OCAH em campo" />
+            <img
+              src="/images/portfolio/essence-01.jpg"
+              alt="Equipe OCAH reunida durante o planejamento de uma obra"
+            />
+            <span>Planejamento que orienta cada entrega</span>
           </Reveal>
 
           <Reveal className="about__content" effect="fade-right" delay={1}>
             <h3>Uma construção organizada do início ao fim.</h3>
             <p>
-              A OCAH Construtora é uma empresa especializada na gestão, execução e
-              acompanhamento de obras, comprometida em oferecer soluções completas com
-              planejamento, transparência e excelência técnica.
+              A OCAH Construtora atua na gestão, execução e acompanhamento de obras, com
+              processos definidos e uma equipe presente em cada etapa.
             </p>
             <p>
-              Atuamos com processos bem definidos, controle rigoroso e uma equipe
-              qualificada para garantir que cada projeto seja conduzido com segurança,
-              eficiência e qualidade.
+              Atendemos Sergipe e toda a região Nordeste, com capacidade para executar
+              projetos em todo o Brasil.
             </p>
-
-            <div className="about__segments" aria-label="Segmentos atendidos">
-              {businessSegments.map((segment) => (
-                <span key={segment}>{segment}</span>
-              ))}
-            </div>
           </Reveal>
         </div>
-
-        <Reveal className="about__locations" effect="fade-up">
-          <strong>Presença regional</strong>
-          <div>
-            {regionalPresence.map((location) => (
-              <span key={location}>
-                <MapPin aria-hidden="true" />
-                {location}
-              </span>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   )

@@ -1,13 +1,9 @@
 import {
   Blocks,
-  Building2,
   ClipboardCheck,
-  DraftingCompass,
   Grid3X3,
-  Layers,
   Paintbrush,
   PanelsTopLeft,
-  SquareStack,
   Zap,
 } from 'lucide-react'
 import { services } from '../services/siteContent'
@@ -20,12 +16,8 @@ const serviceIcons = [
   Zap,
   Grid3X3,
   Paintbrush,
-  Building2,
-  Layers,
-  SquareStack,
   PanelsTopLeft,
   ClipboardCheck,
-  DraftingCompass,
 ]
 
 export function Services() {

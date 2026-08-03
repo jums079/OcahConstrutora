@@ -1,0 +1,138 @@
+.clients {
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.clients__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.client-logo {
+  display: grid;
+  min-height: 170px;
+  place-items: center;
+  padding: 30px;
+  border: 1px solid #ece7e2;
+  border-radius: 12px;
+  background: transparent;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.client-logo--featured {
+  border-color: rgba(125, 75, 34, 0.2);
+  background: var(--color-sand);
+}
+
+.client-logo:hover {
+  z-index: 1;
+  border-color: rgba(125, 75, 34, 0.34);
+  box-shadow: 0 16px 34px rgba(68, 42, 24, 0.09);
+  transform: translateY(-5px);
+}
+
+.client-logo img {
+  width: 100%;
+  max-width: 160px;
+  max-height: 78px;
+  object-fit: contain;
+  filter: saturate(0.85);
+  mix-blend-mode: multiply;
+  transition:
+    filter 200ms ease,
+    transform 200ms ease;
+}
+
+.client-logo--featured img {
+  max-width: 200px;
+  max-height: 94px;
+  filter: saturate(1);
+}
+
+.client-logo--compact img {
+  max-width: 150px;
+  max-height: 68px;
+}
+
+.client-logo--institutional img {
+  width: 118px;
+  height: 68px;
+  object-fit: contain;
+}
+
+.client-wordmark {
+  display: block;
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+}
+
+.client-wordmark--vivo {
+  color: #6f2c91;
+  font-size: clamp(2.15rem, 4vw, 3.3rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  text-transform: lowercase;
+}
+
+.client-wordmark--bmg {
+  color: #f36b21;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  text-transform: lowercase;
+}
+
+.client-logo:hover img {
+  filter: saturate(1);
+  transform: scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .clients__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .clients__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .client-logo {
+    min-height: 132px;
+    padding: 20px;
+  }
+
+  .client-logo img {
+    max-width: 130px;
+    max-height: 66px;
+  }
+
+  .client-logo--featured img {
+    max-width: 150px;
+    max-height: 76px;
+  }
+
+  .client-logo--compact img {
+    max-width: 112px;
+    max-height: 54px;
+  }
+
+  .client-logo--institutional img {
+    width: 94px;
+    height: 58px;
+  }
+
+  .client-wordmark--vivo,
+  .client-wordmark--bmg {
+    font-size: 2rem;
+  }
+
+}

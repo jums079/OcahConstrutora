@@ -1,38 +1,42 @@
 .contact {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.86), rgba(245, 240, 235, 0.9)),
-    url("https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1800&q=80")
-      center / cover no-repeat;
+  background: var(--color-sand);
 }
 
 .contact__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
 .contact-card {
   position: relative;
   display: grid;
-  min-height: 290px;
+  min-height: 260px;
   align-content: start;
   justify-items: center;
   padding: 34px 22px 26px;
-  border: 1px solid rgba(255, 255, 255, 0.76);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.66);
-  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(125, 75, 34, 0.1);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 36px rgba(68, 42, 24, 0.08);
   text-align: center;
-  backdrop-filter: blur(7px);
+  transition:
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.contact-card:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-6px);
 }
 
 .contact-card > svg {
   width: 46px;
   height: 46px;
   margin-bottom: 20px;
-  color: #77716d;
+  color: var(--color-primary);
   stroke-width: 1.5;
 }
 
@@ -46,12 +50,13 @@
 .contact-card p {
   margin-bottom: 22px;
   color: #7f7a76;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
-.contact-card > a {
+.contact-card > a,
+.contact-card > span {
   margin-top: auto;
   color: var(--color-primary);
   font-size: 0.68rem;
@@ -59,48 +64,12 @@
   text-transform: uppercase;
 }
 
-.contact__action {
-  display: flex;
-  justify-content: center;
-  margin-top: 42px;
-}
-
-.contact__action a {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  gap: 10px;
-  padding: 0 24px;
-  border-radius: 999px;
-  color: #ffffff;
-  background: var(--color-primary-dark);
-  box-shadow: 0 12px 24px rgba(68, 42, 24, 0.2);
-  font-size: 0.88rem;
-  font-weight: 700;
-  transition: transform 180ms ease;
-}
-
-.contact__action a:hover {
-  transform: scale(1.07);
-}
-
-.contact__action svg {
-  width: 19px;
-  height: 19px;
-}
-
-@media (max-width: 920px) {
-  .contact__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 540px) {
+@media (max-width: 720px) {
   .contact__grid {
     grid-template-columns: 1fr;
   }
 
   .contact-card {
-    min-height: 240px;
+    min-height: 230px;
   }
 }

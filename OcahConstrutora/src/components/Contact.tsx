@@ -1,10 +1,10 @@
-import { Instagram, Mail, MessageCircle, Phone } from 'lucide-react'
-import { contactChannels, WHATSAPP_LINK } from '../services/siteContent'
+import { Instagram, Mail, MessageCircle } from 'lucide-react'
+import { contactChannels } from '../services/siteContent'
 import '../styles/Contact.css'
 import { Reveal } from './Reveal'
 import { SectionHeading } from './SectionHeading'
 
-const contactIcons = [MessageCircle, Mail, Instagram, Phone]
+const contactIcons = [MessageCircle, Mail, Instagram]
 
 export function Contact() {
   return (
@@ -29,25 +29,20 @@ export function Contact() {
                 <ContactIcon aria-hidden="true" />
                 <h3>{channel.label}</h3>
                 <p>{channel.value}</p>
-                <a
-                  href={channel.href}
-                  target={channel.external ? '_blank' : undefined}
-                  rel={channel.external ? 'noreferrer' : undefined}
+                {channel.href ? (
+                  <a
+                    href={channel.href}
+                    target={channel.external ? '_blank' : undefined}
+                    rel={channel.external ? 'noreferrer' : undefined}
                   aria-label={`Abrir contato por ${channel.label}`}
                 >
-                  Acessar
-                </a>
+                    {channel.actionLabel}
+                  </a>
+                ) : null}
               </Reveal>
             )
           })}
         </div>
-
-        <Reveal className="contact__action" effect="fade-left">
-          <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
-            <MessageCircle aria-hidden="true" />
-            Fale por WhatsApp
-          </a>
-        </Reveal>
       </div>
     </section>
   )

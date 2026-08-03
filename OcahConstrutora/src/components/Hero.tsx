@@ -7,29 +7,27 @@ export function Hero() {
     <section className="hero" id="inicio">
       <div className="hero__inner container">
         <div className="hero__content">
-          <p className="hero__eyebrow">Gestão, execução e acompanhamento de obras</p>
-          <h1>Construímos com planejamento e executamos com excelência</h1>
+          <h1>Engenharia que transforma planejamento em excelência</h1>
           <p className="hero__description">
-            Soluções completas com processos bem definidos, transparência e qualidade
-            técnica para cada etapa do seu projeto.
+            Gestão de obras do projeto à entrega, com controle técnico e transparência.
           </p>
           <a className="hero__button" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
             <MessageCircle aria-hidden="true" />
-            Fale por WhatsApp
+            Falar no WhatsApp
           </a>
         </div>
 
         <div
           className="hero__visual"
           role="img"
-          aria-label="Imagem ilustrativa temporária de uma equipe em uma obra"
+          aria-label="Equipe da OCAH Construtora"
         >
           <div className="hero__visual-shape" aria-hidden="true" />
           <img
-            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
+            src="/images/portfolio/hero-01.png"
             alt=""
           />
-          <span>Imagem ilustrativa</span>
+          <span>Equipe OCAH</span>
         </div>
       </div>
 

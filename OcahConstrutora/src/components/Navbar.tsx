@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { navigationItems, WHATSAPP_LINK } from '../services/siteContent'
+import { navigationItems } from '../services/siteContent'
 import '../styles/Navbar.css'
 import { BrandMark } from './BrandMark'
 
@@ -32,15 +32,6 @@ export function Navbar() {
               {item.label}
             </a>
           ))}
-          <a
-            className="navbar__cta"
-            href={WHATSAPP_LINK}
-            target="_blank"
-            rel="noreferrer"
-            onClick={closeMenu}
-          >
-            Solicitar orçamento
-          </a>
         </nav>
       </div>
     </header>
