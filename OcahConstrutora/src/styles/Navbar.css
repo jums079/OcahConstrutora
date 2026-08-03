@@ -1,0 +1,121 @@
+.navbar {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #ffffff;
+}
+
+.navbar__inner {
+  display: flex;
+  min-height: 84px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .brand-mark {
+  animation: slide-in-down 0.8s ease both;
+}
+
+.navbar__navigation {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  animation: fade-in-right 0.8s 0.2s ease both;
+}
+
+.navbar__navigation > a:not(.navbar__cta) {
+  position: relative;
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.navbar__navigation > a:not(.navbar__cta)::after {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 2px;
+  background: var(--color-accent);
+  content: "";
+  transform: scaleX(0);
+  transition: transform 180ms ease;
+}
+
+.navbar__navigation > a:not(.navbar__cta):hover::after {
+  transform: scaleX(1);
+}
+
+.navbar__menu-button {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.navbar__menu-button span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #ffffff;
+}
+
+@keyframes slide-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-55px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar__inner {
+    min-height: 82px;
+  }
+
+  .navbar__menu-button {
+    display: block;
+  }
+
+  .navbar__navigation {
+    position: absolute;
+    top: 76px;
+    right: 16px;
+    left: 16px;
+    display: none;
+    gap: 0;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(32, 25, 20, 0.98);
+    box-shadow: var(--shadow-card);
+  }
+
+  .navbar__navigation--open {
+    display: grid;
+  }
+
+  .navbar__navigation > a:not(.navbar__cta) {
+    padding: 13px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+}

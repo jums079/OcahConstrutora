@@ -1,0 +1,42 @@
+.placeholder-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 390px;
+  margin: 0;
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.placeholder-image::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(125, 75, 34, 0.04), rgba(52, 32, 20, 0.34));
+  content: "";
+}
+
+.placeholder-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  filter: saturate(0.72) sepia(0.12);
+  transition: transform 450ms ease;
+}
+
+.placeholder-image:hover img {
+  transform: scale(1.07);
+}
+
+.placeholder-image figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  bottom: 16px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.82);
+  background: rgba(52, 32, 20, 0.62);
+  font-size: 0.54rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

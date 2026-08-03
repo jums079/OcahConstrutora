@@ -1,0 +1,114 @@
+:root {
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  color: #3e342d;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --color-primary: #7d4b22;
+  --color-primary-dark: #4d2d17;
+  --color-primary-deep: #342014;
+  --color-accent: #c79b70;
+  --color-accent-light: #ead3bd;
+  --color-text: #3e342d;
+  --color-muted: #8d8782;
+  --color-paper: #ffffff;
+  --color-sand: #f5f0eb;
+  --color-ink: #201914;
+  --shadow-card: 0 20px 48px rgba(68, 42, 24, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--color-paper);
+}
+
+body,
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin-top: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid #efc79f;
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(1280px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 92px 0;
+  scroll-margin-top: 76px;
+}
+
+.eyebrow {
+  margin-bottom: 5px;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 32px, 1280px);
+  }
+
+  .section {
+    padding: 68px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+  }
+}

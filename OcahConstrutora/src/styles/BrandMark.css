@@ -1,0 +1,63 @@
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+}
+
+.brand-mark__symbol {
+  position: relative;
+  width: 48px;
+  height: 46px;
+  flex: 0 0 48px;
+}
+
+.brand-mark__arch {
+  position: absolute;
+  inset: 3px 6px 2px;
+  border: 5px solid currentColor;
+  border-bottom: 0;
+  border-radius: 24px 24px 0 0;
+}
+
+.brand-mark__arch::before {
+  position: absolute;
+  inset: 8px 7px -1px;
+  border: 3px solid currentColor;
+  border-bottom: 0;
+  border-radius: 15px 15px 0 0;
+  content: "";
+}
+
+.brand-mark__arch::after {
+  position: absolute;
+  right: -8px;
+  bottom: -4px;
+  left: -8px;
+  height: 3px;
+  background: currentColor;
+  content: "";
+}
+
+.brand-mark__text {
+  display: grid;
+  line-height: 1;
+}
+
+.brand-mark__text strong {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+
+.brand-mark__text small {
+  margin-top: 6px;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.brand-mark--dark {
+  color: var(--color-primary-dark);
+}
