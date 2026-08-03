@@ -102,6 +102,8 @@ export const companyContacts = {
   phone: '(79) 99815-2300',
 }
 
+export const EMAIL_LINK = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(companyContacts.email)}`
+
 export const contactChannels = [
   {
     label: 'WhatsApp',
@@ -113,8 +115,8 @@ export const contactChannels = [
   {
     label: 'E-mail',
     value: companyContacts.email,
-    href: `mailto:${companyContacts.email}`,
-    external: false,
+    href: EMAIL_LINK,
+    external: true,
     actionLabel: 'Enviar e-mail',
   },
   {
