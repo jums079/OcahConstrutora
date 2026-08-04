@@ -13,7 +13,7 @@ export function About() {
         <div className="about__grid">
           <Reveal className="about__media" effect="fade-left">
             <img
-              src="/images/portfolio/essence-01.jpg"
+              src="/images/portfolio/essence-2026.jpg"
               alt="Equipe OCAH reunida durante o planejamento de uma obra"
             />
             <span>Planejamento que orienta cada entrega</span>
