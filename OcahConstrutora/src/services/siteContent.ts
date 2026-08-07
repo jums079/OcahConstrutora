@@ -1,4 +1,4 @@
-export const WHATSAPP_LINK = 'https://wa.me/5579998152300?text=Olá'
+export const WHATSAPP_LINK = 'https://wa.me/557998898179?text=Olá'
 
 export const navigationItems = [
   { label: 'Início', href: '#inicio' },
@@ -99,7 +99,7 @@ export const companyContacts = {
   email: 'ocahconstrutora@gmail.com',
   instagram: '@ocahconstrutora.se',
   instagramUrl: 'https://www.instagram.com/ocahconstrutora.se/',
-  phone: '(79) 99815-2300',
+  phone: '(79) 99889-8179',
 }
 
 export const EMAIL_LINK = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(companyContacts.email)}`
